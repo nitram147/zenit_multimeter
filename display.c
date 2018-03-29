@@ -292,9 +292,17 @@ void mode_r_measurement(uint8_t tmp_measure_it){
 		erase_display();
 		if(labels_state == SHOW_LABELS) lcd_puts_fixed("R=");
 
-		display_number_with_unit_prefix(current_measured_values.resistance, ((labels_state == SHOW_LABELS)?6:8));
+		if(current_measured_values.resistance <= MAX_RESISTANCE){
 
-		lcd_putc_fixed(OHM_CHARACTER);
+			display_number_with_unit_prefix(current_measured_values.resistance, ((labels_state == SHOW_LABELS)?6:8));
+			lcd_putc_fixed(OHM_CHARACTER);
+
+		}else{
+
+			lcd_puts_fixed(" Open");
+
+		}
+
 		display_need_to_be_rewrited = 0;
 
 		show_custom_wifi_char();
@@ -314,7 +322,7 @@ void mode_d_measurement(uint8_t tmp_measure_it){
 		erase_display();
 		if(labels_state == SHOW_LABELS) lcd_puts_fixed("D=");
 
-		if(current_measured_values.diode < 1.401){
+		if(current_measured_values.diode < MAX_DIODE_VOLTAGE){
 
 			display_number_with_unit_prefix(current_measured_values.diode, ((labels_state == SHOW_LABELS)?6:8));
 			lcd_putc_fixed('V');

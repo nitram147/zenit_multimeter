@@ -9,6 +9,10 @@
 #define DEGREE_CHARACTER 223
 #define OHM_CHARACTER 244
 
+#define MAX_DIODE_VOLTAGE 1.401
+#define MAX_RESISTANCE 15000000
+
+
 volatile uint8_t lcd_fix_cursor_position;
 void lcd_puts_fixed(char *tmp_string);
 void lcd_putc_fixed(char tmp_char);
