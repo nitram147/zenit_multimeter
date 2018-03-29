@@ -4,7 +4,7 @@ ZENIT multimeter is an opensource & openhardware measurement device with error a
 You can measure:
  * DC voltage (3 manual ranges (-4V,4V; -40V,40V; -400V,400V), auto-range)
  * DC current (2 manual ranges with auto range option (-40mA,40mA; -400mA,400mA) and another 1 manual range on different input terminals (-5A,5A))
- * Resistance up to 10MOhms
+ * Resistance up to 15MOhms
  * PN passage voltage
  * Temperature (RTD and NTC sensors).
 
